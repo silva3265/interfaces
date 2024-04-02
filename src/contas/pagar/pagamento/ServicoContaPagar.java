@@ -1,4 +1,4 @@
-package contas_pagar;
+package contas.pagar.pagamento;
 
 public class ServicoContaPagar {
 
