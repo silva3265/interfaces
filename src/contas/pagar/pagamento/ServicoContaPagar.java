@@ -2,15 +2,18 @@ package contas.pagar.pagamento;
 
 public class ServicoContaPagar {
 
-	public void pagar(DocumentoPagavel documento) {
-		Beneficiario beneficiario = documento.getBeneficiario();
+	 private MetodoPagamento metodoPagamento; // Injeção de dependencias
 
-		if (beneficiario.naoPossuiChavePix()) {
-			throw new RuntimeException("Beneficiário não possui chave Pix");
-		}
+	    public ServicoContaPagar(MetodoPagamento metodoPagamento) {
+	        this.metodoPagamento = metodoPagamento;
+	    }
 
-		System.out.printf("DEBUG: Efetuando PIX para %s no valor de %.2f com a chave %s%n", beneficiario.getNome(),
-				documento.getValorTotal(), beneficiario.getChavePix());
-	}
+	    public void pagar(DocumentoPagavel documento) {
+	        // Poderia ter outras regras de negócio aqui
+	        // como por exemplo registrar o pagamento no banco de dados,
+	        // enviar uma notificação por e-mail, etc
+
+	        metodoPagamento.pagar(documento);
+	    }
 
 }
