@@ -30,5 +30,10 @@ public class Industria extends Empresa implements ClienteFinanciavel {
 
 		return valorAprovado;
 	}
+	
+	@Override
+	public double calcularJuros(double valorSolicitado) {
+		return 5.0;
+	}
 
 }
