@@ -6,9 +6,11 @@ public class Principal {
 		var servicoFinanciamento = new ServicoFinanciamento();
 		var fazenda = new Fazenda("Fazenda Dona Benedita", 5_000_000, 5);
 		var industria = new Industria("Alimentos da Vovó", 900_000, true);
+		var funcionario = new Funcionario("João da silva", 18_000);
 
+		servicoFinanciamento.solicitarFinanciamento(funcionario, 90_000);
 		servicoFinanciamento.solicitarFinanciamento(fazenda, 600_000);
-//        servicoFinanciamento.solicitarFinanciamento(industria, 600_000);
+		servicoFinanciamento.solicitarFinanciamento(industria, 500_000);
 	}
 
 }
