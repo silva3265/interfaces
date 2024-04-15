@@ -3,15 +3,19 @@ package financeira;
 public interface ClienteFinanciavel {
 
 	double calcularLimiteAprovado();
+	
+	double JUROS_BAIXO_RISCO = 1.0;
+	double JUROS_MEDIO_RISCO = 1.0;
+	double JUROS_AUTO_RISCO = 1.0;
 
 	default double calcularJuros(double valorSolicitado) { // default method
 
 		if (isFinanciamentoPequenoValor(valorSolicitado)) {
-			return 1.0;
+			return JUROS_BAIXO_RISCO;
 		} else if (isFinanciamentoGrandeMedioValor(valorSolicitado)) {
-			return 1.5;
+			return JUROS_MEDIO_RISCO;
 		}
-		return 2.0;
+		return JUROS_AUTO_RISCO;
 	}
 
 	static boolean isFinanciamentoGrandeMedioValor(double valorSolicitado) {
