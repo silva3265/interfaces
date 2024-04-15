@@ -6,12 +6,20 @@ public interface ClienteFinanciavel {
 
 	default double calcularJuros(double valorSolicitado) { // default method
 
-		if (valorSolicitado <= 100_000) {
+		if (isFinanciamentoPequenoValor(valorSolicitado)) {
 			return 1.0;
-		} else if (valorSolicitado <= 1_000_000) {
+		} else if (isFinanciamentoGrandeMedioValor(valorSolicitado)) {
 			return 1.5;
 		}
 		return 2.0;
+	}
+
+	private boolean isFinanciamentoGrandeMedioValor(double valorSolicitado) {
+		return valorSolicitado <= 1_000_000;
+	}
+	
+	private boolean isFinanciamentoPequenoValor(double valorSolicitado) {
+		return valorSolicitado <= 100_000;
 	}
 
 }
