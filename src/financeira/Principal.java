@@ -12,7 +12,7 @@ public class Principal {
 
 		System.out.printf("Juros baixo risco: %.2f%n", ClienteFinanciavel.JUROS_BAIXO_RISCO);
 		
-		servicoFinanciamento.solicitarFinanciamento(funcionario, 90_000);
+		//servicoFinanciamento.solicitarFinanciamento(funcionario, 90_000);
 		servicoFinanciamento.solicitarFinanciamento(fazenda, 600_000);
 		servicoFinanciamento.solicitarFinanciamento(industria, 500_000);
 	}

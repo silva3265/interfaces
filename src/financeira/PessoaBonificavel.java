@@ -1,6 +1,6 @@
 package financeira;
 
-public interface PessoaBonificavel extends ClienteFinanciavel{
+public interface PessoaBonificavel extends ClienteFinanciavel {
 	
 	double calcularBonus(double percentualMetaAlcancada);
 
